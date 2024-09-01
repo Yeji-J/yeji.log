@@ -21,6 +21,7 @@ const nextConfig = {
   },
   output: 'export',
   assetPrefix: prefix,
+  basePath: prefix,
 }
 
 export default nextConfig
