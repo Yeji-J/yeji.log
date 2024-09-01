@@ -114,7 +114,7 @@ const photoData = {
     vancouver: {
       20190621: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/canada/vancouver/2019-06-21/breakfast.jpg',
+          img: '/canada/vancouver/2019-06-21/breakfast.jpg',
           date: '2019-06-21',
           country: 'Canada',
           city: 'Vancouver',
@@ -129,7 +129,7 @@ const photoData = {
     fukuoka: {
       20180814: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/japan/fukuoka/2018-08-14/brunch.jpg',
+          img: '/japan/fukuoka/2018-08-14/brunch.jpg',
           date: '2018-08-14',
           country: 'Japan',
           city: 'Fukuoka',
@@ -142,7 +142,7 @@ const photoData = {
     tokyo: {
       20170617: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/japan/tokyo/2017-06-17/tokyotower.jpg',
+          img: '/japan/tokyo/2017-06-17/tokyotower.jpg',
           date: '2017-06-17',
           country: 'Japan',
           city: 'Tokyo',
@@ -155,7 +155,7 @@ const photoData = {
     osaka: {
       20181201: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/japan/osaka/2018-12-01/yakiniku.jpeg',
+          img: '/japan/osaka/2018-12-01/yakiniku.jpeg',
           date: '2018-12-01',
           country: 'Japan',
           title: 'YAKI NIKU',
@@ -170,7 +170,7 @@ const photoData = {
     taipei: {
       20191213: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taipei/2019-12-13/jiufen.jpg',
+          img: '/taiwan/taipei/2019-12-13/jiufen.jpg',
           date: '2019-12-13',
           country: 'Taiwan',
           city: 'Taipei',
@@ -181,7 +181,7 @@ const photoData = {
       ],
       20221129: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taipei/2022-11-29/tofu.jpg',
+          img: '/taiwan/taipei/2022-11-29/tofu.jpg',
           date: '2022-11-29',
           country: 'Taiwan',
           city: 'Taipei',
@@ -194,7 +194,7 @@ const photoData = {
     kaohsiung: {
       20230612: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/kaohsiung/2023-06-12/tea.jpg',
+          img: '/taiwan/kaohsiung/2023-06-12/tea.jpg',
           date: '2023-06-12',
           country: 'Taiwan',
           city: 'Kaohsiung',
@@ -207,7 +207,7 @@ const photoData = {
     taichung: {
       20240216: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/chunshuitang.jpg',
+          img: '/taiwan/taichung/2024-02-16/chunshuitang.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -216,7 +216,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/waiting.jpg',
+          img: '/taiwan/taichung/2024-02-16/waiting.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -225,7 +225,7 @@ const photoData = {
           tags: [],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/noodle.jpg',
+          img: '/taiwan/taichung/2024-02-16/noodle.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -234,7 +234,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/view.jpg',
+          img: '/taiwan/taichung/2024-02-16/view.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -243,7 +243,7 @@ const photoData = {
           tags: [],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/rice.jpg',
+          img: '/taiwan/taichung/2024-02-16/rice.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -252,7 +252,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/mom.jpg',
+          img: '/taiwan/taichung/2024-02-16/mom.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -261,7 +261,7 @@ const photoData = {
           tags: ['FAVS'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/danbing.jpg',
+          img: '/taiwan/taichung/2024-02-16/danbing.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -270,7 +270,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/huoguo.jpg',
+          img: '/taiwan/taichung/2024-02-16/huoguo.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -279,7 +279,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/coffe.jpg',
+          img: '/taiwan/taichung/2024-02-16/coffe.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -288,7 +288,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/accom.jpg',
+          img: '/taiwan/taichung/2024-02-16/accom.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -297,7 +297,7 @@ const photoData = {
           tags: [],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/taiwan/taichung/2024-02-16/pork.jpg',
+          img: '/taiwan/taichung/2024-02-16/pork.jpg',
           date: '2024-02-16',
           country: 'Taiwan',
           city: 'Taichung',
@@ -312,7 +312,7 @@ const photoData = {
     hochiminh: {
       20220605: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/vietnam/hochiminh/2022-06-05/comtam.jpg',
+          img: '/vietnam/hochiminh/2022-06-05/comtam.jpg',
           date: '2022-06-05',
           country: 'Vietnam',
           city: 'Ho Chi Minh',
@@ -325,7 +325,7 @@ const photoData = {
     nhatrang: {
       20230709: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/vietnam/nhatrang/2023-07-09/pool.jpg',
+          img: '/vietnam/nhatrang/2023-07-09/pool.jpg',
           date: '2023-07-09',
           country: 'Vietnam',
           city: 'Nha trang',
@@ -340,7 +340,7 @@ const photoData = {
     bangkok: {
       20240614: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/curry.jpg',
+          img: '/thailand/bangkok/2024-06-14/curry.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -349,7 +349,7 @@ const photoData = {
           tags: ['FAVS', 'FOOD'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/film.jpeg',
+          img: '/thailand/bangkok/2024-06-14/film.jpeg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -358,7 +358,7 @@ const photoData = {
           tags: ['FAVS'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/pool.jpg',
+          img: '/thailand/bangkok/2024-06-14/pool.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -367,7 +367,7 @@ const photoData = {
           tags: [],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/noodle.jpg',
+          img: '/thailand/bangkok/2024-06-14/noodle.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -376,7 +376,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/bus.jpg',
+          img: '/thailand/bangkok/2024-06-14/bus.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -385,7 +385,7 @@ const photoData = {
           tags: [],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/bhlee.jpg',
+          img: '/thailand/bangkok/2024-06-14/bhlee.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -394,7 +394,7 @@ const photoData = {
           tags: [],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/mukata.jpg',
+          img: '/thailand/bangkok/2024-06-14/mukata.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -403,7 +403,7 @@ const photoData = {
           tags: ['FOOD'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/jazzbar.jpg',
+          img: '/thailand/bangkok/2024-06-14/jazzbar.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -412,7 +412,7 @@ const photoData = {
           tags: ['FAVS'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/fries.jpg',
+          img: '/thailand/bangkok/2024-06-14/fries.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -421,7 +421,7 @@ const photoData = {
           tags: ['food'],
         },
         {
-          img: 'https://yeji-j.github.io/yeji.log/thailand/bangkok/2024-06-14/bin.jpg',
+          img: '/thailand/bangkok/2024-06-14/bin.jpg',
           date: '2024-06-14',
           country: 'Thailand',
           city: 'Bangkok',
@@ -436,7 +436,7 @@ const photoData = {
     lasvegas: {
       20190422: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/lasvegas/2019-04-22/grandcanyon.jpg',
+          img: '/usa/lasvegas/2019-04-22/grandcanyon.jpg',
           date: '2019-04-22',
           country: 'USA',
           city: 'Las Vegas',
@@ -449,7 +449,7 @@ const photoData = {
     losangeles: {
       20190224: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/losangeles/2019-02-24/pinkwall.jpg',
+          img: '/usa/losangeles/2019-02-24/pinkwall.jpg',
           date: '2019-02-24',
           country: 'USA',
           city: 'Los Angeles',
@@ -460,7 +460,7 @@ const photoData = {
       ],
       20190609: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/losangeles/2019-06-09/urbanlight.jpg',
+          img: '/usa/losangeles/2019-06-09/urbanlight.jpg',
           date: '2019-06-09',
           country: 'USA',
           city: 'Los Angeles',
@@ -474,7 +474,7 @@ const photoData = {
     newyork: {
       20190626: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/newyork/2019-06-26/chelsea.jpg',
+          img: '/usa/newyork/2019-06-26/chelsea.jpg',
           date: '2019-06-26',
           country: 'USA',
           city: 'New York',
@@ -487,7 +487,7 @@ const photoData = {
     sandiego: {
       20190110: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/sandiego/2019-01-10/harborhouse.jpg',
+          img: '/usa/sandiego/2019-01-10/harborhouse.jpg',
           date: '2019-01-10',
           country: 'USA',
           city: 'San Diego',
@@ -500,7 +500,7 @@ const photoData = {
     sanfrancisco: {
       20190419: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/sanfrancisco/2019-04-19/steak.jpg',
+          img: '/usa/sanfrancisco/2019-04-19/steak.jpg',
           date: '2019-04-19',
           country: 'USA',
           city: 'San Francisco',
@@ -511,7 +511,7 @@ const photoData = {
       ],
       20190613: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/sanfrancisco/2019-06-13/fisherman.jpg',
+          img: '/usa/sanfrancisco/2019-06-13/fisherman.jpg',
           date: '2019-06-13',
           country: 'USA',
           city: 'San Francisco',
@@ -524,7 +524,7 @@ const photoData = {
     seattle: {
       20190616: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/usa/seattle/2019-06-16/glassart.jpeg',
+          img: '/usa/seattle/2019-06-16/glassart.jpeg',
           date: '2019-06-16',
           country: 'USA',
           city: 'Seattle',
@@ -539,7 +539,7 @@ const photoData = {
     singapore: {
       20170717: [
         {
-          img: 'https://yeji-j.github.io/yeji.log/singapore/2017-07-17/flower.jpg',
+          img: '/singapore/2017-07-17/flower.jpg',
           date: '2017-07-17',
           country: 'Singapore',
           city: 'Singapore',
