@@ -353,7 +353,7 @@ const photoData = {
           country: 'Vietnam',
           city: 'Ho Chi Minh',
           title: 'crocs night',
-          desc: '흰색 크록스를 찾아 헤메던 밤',
+          desc: '흰색 크록스를 찾아 헤매던 밤',
           tags: [],
         },
         {
@@ -380,7 +380,7 @@ const photoData = {
           country: 'Vietnam',
           city: 'Ho Chi Minh',
           title: 'to the moon and back',
-          desc: '마음 꽉차게 행복했어 아침 수영',
+          desc: '마음 꽉차게 행복했던 아침 수영',
           tags: ['FAVS'],
         },
         {
