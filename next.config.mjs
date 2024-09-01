@@ -5,6 +5,11 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+const prefix =
+  process.env.NODE_ENV === 'production'
+    ? 'https://yeji-j.github.io/yeji.log/'
+    : ''
+
 const nextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
@@ -14,6 +19,8 @@ const nextConfig = {
     }
     return config
   },
+  output: 'export',
+  assetPrefix: prefix,
 }
 
 export default nextConfig
