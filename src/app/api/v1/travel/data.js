@@ -1,26 +1,3 @@
-import { NextResponse } from 'next/server'
-
-export async function GET(request) {
-  const { searchParams } = new URL(request.url)
-
-  let country = searchParams.get('country')
-  let city = searchParams.get('city')
-  let date = searchParams.get('date')
-
-  country = decodeURI(country?.toLowerCase())
-  city = decodeURI(city?.toLowerCase()).replace(/\s+/g, '')
-  date = decodeURI(date?.replaceAll('-', '')).replace(/\s+/g, '')
-
-  const title = titleData[country][city][date].title
-    ? titleData[country][city][date].title
-    : ''
-  const photoList = photoData[country][city][date]
-    ? photoData[country][city][date]
-    : []
-
-  return NextResponse.json({ data: { title, photoList } }, { status: 200 })
-}
-
 const titleData = {
   canada: {
     vancouver: {
@@ -484,3 +461,5 @@ const photoData = {
     },
   },
 }
+
+export default { photoData, titleData }

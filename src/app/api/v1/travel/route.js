@@ -5,8 +5,6 @@ export async function GET(request) {
   return NextResponse.json({ data: res }, { status: 200 })
 }
 
-export async function POST(request) {}
-
 const data = [
   {
     img: '/canada/vancouver/2019-06-21/breakfast.jpg',

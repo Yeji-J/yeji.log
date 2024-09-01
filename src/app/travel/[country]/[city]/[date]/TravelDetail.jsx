@@ -15,7 +15,23 @@ export default function TravelDetail({ params: { country, city, date } }) {
       date,
     })
 
-    fetch(`/api/v1/travel/detail?${queryParams.toString()}`)
+    // 동적 사이트 배포 시 수정 필요
+    let url = ''
+
+    if (city === 'bangkok') url = 'bangkok'
+    if (city === 'taichung') url = 'taichung'
+    if (city === 'nhatrang') url = 'nhatrang'
+    if (city === 'kaohsiung') url = 'kaohsiung'
+    if (city === 'taipei' && date === '20221129') url = 'taipei'
+    if (city === 'hochiminh') url = 'hochiminh'
+
+    if (!url.length) {
+      setTravelTitle(`${city?.toUpperCase()}, ${country?.toUpperCase()}`)
+      setPhotoList([])
+      return
+    }
+
+    fetch(`/api/v1/travel/${url}`)
       .then((response) => response.json())
       .then((res) => {
         const { title, photoList } = res.data
