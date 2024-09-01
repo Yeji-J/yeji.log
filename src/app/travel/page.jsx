@@ -19,12 +19,18 @@ export default function Travel() {
       .catch((error) => console.error('API 호출 실패:', error))
   }, [])
 
+  const reg = (val) => {
+    return val.replace(/\s+/g, '')?.toLowerCase()
+  }
+
   return (
     <ImageList cols={3} gap={10}>
       {travelList.map((travel) => (
         <Link
           key={travel.img}
-          href={`/travel/${travel.country}/${travel.city}/${travel.date}`}
+          href={`/travel/${reg(travel.country)}/${reg(
+            travel.city
+          )}/${travel.date.replaceAll('-', '')}`}
         >
           <TravelCard photo={travel} />
         </Link>

@@ -7,7 +7,7 @@ export async function GET(request) {
   let city = searchParams.get('city')
   let date = searchParams.get('date')
 
-  country = decodeURI(country?.toLowerCase()).replace(/\s+/g, '')
+  country = decodeURI(country?.toLowerCase())
   city = decodeURI(city?.toLowerCase()).replace(/\s+/g, '')
   date = decodeURI(date?.replaceAll('-', '')).replace(/\s+/g, '')
 

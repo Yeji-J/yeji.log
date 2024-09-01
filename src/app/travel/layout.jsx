@@ -7,9 +7,9 @@ import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlin
 
 export default function TravelLayout({ children }) {
   const params = useParams()
-  const date = params.date ? params.date.replaceAll('-', '.') : ''
-  const country = params.country ? params.country : ''
-  const city = params.city ? params.city : ''
+  const date = params.date
+  const country = params.country?.toUpperCase()
+  const city = params.city?.toUpperCase()
 
   // children에 country, date, city 값 전달
   const childrenWithProps = React.Children.map(children, (child) =>

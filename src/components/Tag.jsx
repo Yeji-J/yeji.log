@@ -42,7 +42,7 @@ export default function Tag({ tag }) {
               fontSize: 14,
             }}
           >
-            {tag.toUpperCase()}
+            {tag?.toUpperCase()}
           </Typography>
         </Stack>
       )}

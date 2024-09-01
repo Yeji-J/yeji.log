@@ -1,51 +1,38 @@
-'use client'
-import { useEffect, useState } from 'react'
-import PhotoCard from '@components/PhotoCard'
-import { Stack, ImageListItem, ListSubheader } from '@mui/material'
-import Tag from '@components/Tag'
+import TravelDetail from './TravelDetail'
 
-export default function TravelDetail({ params: { country, city, date } }) {
-  const [travelTitle, setTravelTitle] = useState('')
-  const [photoList, setPhotoList] = useState([])
+export async function generateStaticParams() {
+  const travelPaths = [
+    { country: 'canada', city: 'vancouver', date: '20190621' },
+    { country: 'japan', city: 'fukuoka', date: '20180814' },
+    { country: 'japan', city: 'tokyo', date: '20170617' },
+    { country: 'japan', city: 'osaka', date: '20181201' },
+    { country: 'taiwan', city: 'taipei', date: '20191213' },
+    { country: 'taiwan', city: 'taipei', date: '20221129' },
+    { country: 'taiwan', city: 'kaohsiung', date: '20230612' },
+    { country: 'taiwan', city: 'taichung', date: '20240216' },
+    { country: 'vietnam', city: 'hochiminh', date: '20220605' },
+    { country: 'vietnam', city: 'nhatrang', date: '20230709' },
+    { country: 'thailand', city: 'bangkok', date: '20240614' },
+    { country: 'usa', city: 'lasvegas', date: '20190422' },
+    { country: 'usa', city: 'losangeles', date: '20190224' },
+    { country: 'usa', city: 'losangeles', date: '20190609' },
+    { country: 'usa', city: 'newyork', date: '20190626' },
+    { country: 'usa', city: 'sandiego', date: '20190110' },
+    { country: 'usa', city: 'sanfrancisco', date: '20190419' },
+    { country: 'usa', city: 'sanfrancisco', date: '20190613' },
+    { country: 'usa', city: 'seattle', date: '20190616' },
+    { country: 'singapore', city: 'singapore', date: '20170717' },
+  ]
 
-  useEffect(() => {
-    const queryParams = new URLSearchParams({
-      country,
-      city,
-      date,
-    })
+  return travelPaths.map((path) => ({
+    country: path.country,
+    city: path.city,
+    date: path.date,
+  }))
+}
 
-    fetch(`/api/v1/travel/detail?${queryParams.toString()}`)
-      .then((response) => response.json())
-      .then((res) => {
-        const { title, photoList } = res.data
-        setTravelTitle(title)
-        setPhotoList(photoList)
-      })
-      .catch((error) => console.error('API 호출 실패:', error))
-  }, [country, city, date, travelTitle])
+export default function TravelPage({ params }) {
+  const { country, city, date } = params
 
-  return (
-    <Stack direction="column" spacing={2} sx={{ pt: 2 }}>
-      <ImageListItem key="Subheader" cols={2}>
-        <ListSubheader
-          component="div"
-          sx={{
-            fontSize: 16,
-          }}
-        >
-          {travelTitle}
-        </ListSubheader>
-      </ImageListItem>
-      {photoList.map((item) => {
-        return (
-          <PhotoCard key={item.img} photo={item}>
-            {item.tags.map((tag, idx) => {
-              return <Tag key={idx} tag={tag} />
-            })}
-          </PhotoCard>
-        )
-      })}
-    </Stack>
-  )
+  return <TravelDetail params={{ country, city, date }} />
 }
