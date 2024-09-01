@@ -1,16 +1,11 @@
-'use clinet'
-import { useRouter } from 'next/navigation'
 import { Stack, ImageListItem, Typography } from '@mui/material'
-import { grey } from '@mui/material/colors'
 
 export default function PhotoCard({ photo, children }) {
-  const { basePath } = useRouter()
-  const imgSrc = basePath ? `${basePath}${photo.img}` : photo.img
   return (
     <Stack direction="row" spacing={2} sx={{ width: 900, height: 450 }}>
       <ImageListItem key={photo.img} sx={{ width: 600 }}>
         <img
-          src={imgSrc}
+          src={photo.img}
           alt={photo.title}
           style={{
             objectFit: 'cover',

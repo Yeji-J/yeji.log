@@ -1,10 +1,7 @@
-'use client'
 import { Box, ImageListItem, ImageListItemBar } from '@mui/material'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 export default function PhotoCard({ photo }) {
-  const { basePath } = useRouter()
-  const imgSrc = basePath ? `${basePath}${photo.img}` : photo.img
   const cardTitle = `${photo.city}, ${photo.country}`
 
   return (
@@ -17,7 +14,7 @@ export default function PhotoCard({ photo }) {
         }}
       >
         <img
-          src={imgSrc}
+          src={photo.img}
           alt={photo.title}
           style={{
             width: '100%',
