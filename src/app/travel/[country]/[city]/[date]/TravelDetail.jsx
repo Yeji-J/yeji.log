@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import PhotoCard from '@components/PhotoCard'
 import { Stack, ImageListItem, ListSubheader } from '@mui/material'
 import Tag from '@components/Tag'
-// import data from './data'
-import data from './dev'
+import data from './data'
+// import data from './dev'
 
 export default function TravelDetail({ params: { country, city, date } }) {
   const [travelTitle, setTravelTitle] = useState('')
