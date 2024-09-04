@@ -4,7 +4,6 @@ import PhotoCard from '@components/PhotoCard'
 import { Stack, ImageListItem, ListSubheader } from '@mui/material'
 import Tag from '@components/Tag'
 import data from './data'
-// import data from './dev'
 
 export default function TravelDetail({ params: { country, city, date } }) {
   const [travelTitle, setTravelTitle] = useState('')
@@ -14,19 +13,6 @@ export default function TravelDetail({ params: { country, city, date } }) {
     const { titleData, photoData } = data
     setTravelTitle(titleData[country][city][date].title)
     setPhotoList(photoData[country][city][date])
-    // const queryParams = new URLSearchParams({
-    //   country,
-    //   city,
-    //   date,
-    // })
-    // fetch(`/api/v1/travel/${url}`)
-    //   .then((response) => response.json())
-    //   .then((res) => {
-    //     const { title, photoList } = res.data
-    //     setTravelTitle(title)
-    //     setPhotoList(photoList)
-    //   })
-    //   .catch((error) => console.error('API 호출 실패:', error))
   }, [country, city, date, travelTitle])
 
   return (

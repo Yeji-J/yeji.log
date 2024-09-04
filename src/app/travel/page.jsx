@@ -4,7 +4,6 @@ import Link from 'next/link'
 import TravelCard from '@components/TravelCard'
 import { ImageList } from '@mui/material'
 import data from './data'
-// import data from './dev'
 
 export default function Travel() {
   const [travelList, setTravelList] = useState([])
