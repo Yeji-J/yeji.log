@@ -11,6 +11,11 @@ body {
   justify-content: center;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+}
+
 .main-content {
   max-width: 960px;
   display: flex;
