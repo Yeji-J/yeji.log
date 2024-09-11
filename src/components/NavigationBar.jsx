@@ -20,7 +20,7 @@ import { Menu as MenuIcon } from '@mui/icons-material'
 
 import { useRouter } from 'next/navigation'
 
-const drawerWidth = 240
+const drawerWidth = 180
 const navItems = [
   { title: 'DAILY', url: '/daily' },
   { title: 'TRAVEL', url: '/travel' },
@@ -72,7 +72,7 @@ export default function NavigationBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ backgroundColor: 'black' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -118,6 +118,7 @@ export default function NavigationBar(props) {
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
+              backgroundColor: 'black',
             },
           }}
         >

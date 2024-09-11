@@ -4,6 +4,7 @@ import { Typography, Stack, Box } from '@mui/material'
 import { useParams } from 'next/navigation'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlined'
+import '@styles/travelDetail.css'
 
 export default function TravelLayout({ children }) {
   const params = useParams()
@@ -17,35 +18,29 @@ export default function TravelLayout({ children }) {
   )
 
   return (
-    <Stack direction="column" sx={{ justifyContent: 'flex-start' }}>
-      <Stack
-        direction="row"
-        spacing={1}
-        sx={{
-          minWidth: 900,
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-        }}
-      >
-        <AirplaneTicketOutlinedIcon />
-        <Typography>TRAVEL LOG</Typography>
+    <div>
+      <div className="title-container">
+        <div className="page-title main">
+          <AirplaneTicketOutlinedIcon />
+          <div>TRAVEL LOG</div>
+        </div>
         {country && (
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <PlayArrowIcon /> <Typography>{country}</Typography>
-          </Stack>
+          <div className="page-title">
+            <PlayArrowIcon /> <div>{country}</div>
+          </div>
         )}
         {city && (
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <PlayArrowIcon /> <Typography>{decodeURI(city)}</Typography>
-          </Stack>
+          <div className="page-title">
+            <PlayArrowIcon /> <div>{decodeURI(city)}</div>
+          </div>
         )}
         {date && (
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <PlayArrowIcon /> <Typography>{date}</Typography>
-          </Stack>
+          <div className="page-title">
+            <PlayArrowIcon /> <div>{date}</div>
+          </div>
         )}
-      </Stack>
+      </div>
       {childrenWithProps}
-    </Stack>
+    </div>
   )
 }

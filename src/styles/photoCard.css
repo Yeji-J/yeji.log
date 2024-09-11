@@ -1,0 +1,102 @@
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+@media all and (min-width: 1024px) {
+  .photo-card-container {
+    max-width: 900px;
+    height: 450px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .photo-card__photo {
+    width: 600px;
+  }
+
+  .photo-card__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tag-list {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .photo-card-container {
+    max-width: 900px;
+    height: 450px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .photo-card__photo {
+    width: 600px;
+  }
+
+  .photo-card__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tag-list {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .photo-card-container {
+    max-width: 767px;
+    height: 450px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .photo-card__photo {
+    width: 500px;
+  }
+
+  .photo-card__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tag-list {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+/* 모바일 세로 (해상도 ~ 479px)*/
+@media all and (max-width: 479px) {
+  .photo-card-container {
+    max-width: 479px;
+  }
+
+  .photo-card__photo {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .photo-card__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .tag-list {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+  }
+}

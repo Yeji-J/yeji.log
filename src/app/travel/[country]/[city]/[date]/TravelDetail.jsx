@@ -1,7 +1,14 @@
 'use client'
+import '@styles/travelDetail.css'
 import { useEffect, useState } from 'react'
 import PhotoCard from '@components/PhotoCard'
-import { Stack, ImageListItem, ListSubheader } from '@mui/material'
+import {
+  Stack,
+  Box,
+  ImageListItem,
+  ListSubheader,
+  Typography,
+} from '@mui/material'
 import Tag from '@components/Tag'
 import data from './data'
 
@@ -16,17 +23,8 @@ export default function TravelDetail({ params: { country, city, date } }) {
   }, [country, city, date, travelTitle])
 
   return (
-    <Stack direction="column" spacing={2} sx={{ pt: 2 }}>
-      <ImageListItem key="Subheader" cols={2}>
-        <ListSubheader
-          component="div"
-          sx={{
-            fontSize: 16,
-          }}
-        >
-          {travelTitle}
-        </ListSubheader>
-      </ImageListItem>
+    <div className="travel-detail-container">
+      <div className="sub-title">{travelTitle}</div>
       {photoList.map((item) => {
         return (
           <PhotoCard key={item.img} photo={item}>
@@ -36,6 +34,6 @@ export default function TravelDetail({ params: { country, city, date } }) {
           </PhotoCard>
         )
       })}
-    </Stack>
+    </div>
   )
 }

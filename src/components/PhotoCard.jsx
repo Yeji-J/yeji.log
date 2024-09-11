@@ -1,30 +1,31 @@
-import { Stack, ImageListItem, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
+import '@styles/photoCard.css'
 
 export default function PhotoCard({ photo, children }) {
   return (
-    <Stack direction="row" spacing={2} sx={{ width: 900, height: 450 }}>
-      <ImageListItem key={photo.img} sx={{ width: 600 }}>
+    <div className="photo-card-container">
+      <div className="photo-card__photo">
         <img
           src={photo.img}
           alt={photo.title}
           style={{
+            width: '100%',
+            height: '100%',
             objectFit: 'cover',
           }}
           loading="lazy"
         />
-      </ImageListItem>
+      </div>
 
-      <Stack direction="column" spacing={1} sx={{ width: 300 }}>
-        <Typography fontWeight={500} sx={{ fontSize: 15 }}>
+      <div className="photo-card__desc">
+        <div fontWeight={500} sx={{ fontSize: 15 }}>
           {photo.title?.toUpperCase()}
-        </Typography>
-        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-          {children}
-        </Stack>
+        </div>
+        <div className="tag-list">{children}</div>
         <Typography sx={{ pt: 3, whiteSpace: 'pre-line', fontSize: 14 }}>
           {photo.desc}
         </Typography>
-      </Stack>
-    </Stack>
+      </div>
+    </div>
   )
 }

@@ -11,11 +11,14 @@ export default function DailyLayout({ children }) {
   const country = params.country ? params.country : ''
 
   return (
-    <Stack direction="column" sx={{ justifyContent: 'flex-start', width: 900 }}>
+    <Stack direction="column">
       <Stack
         direction="row"
         spacing={1}
-        sx={{ alignItems: 'center', justifyContent: 'flex-start' }}
+        sx={{
+          pb: 1,
+          alignItems: 'center',
+        }}
       >
         <DateRangeOutlinedIcon />
         <Typography>DAILY LOG</Typography>
