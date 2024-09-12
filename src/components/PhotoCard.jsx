@@ -1,20 +1,12 @@
-import { Box, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import '@styles/photoCard.css'
+import styled from '@emotion/styled'
 
 export default function PhotoCard({ photo, children }) {
   return (
     <div className="photo-card-container">
       <div className="photo-card__photo">
-        <img
-          src={photo.img}
-          alt={photo.title}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-          loading="lazy"
-        />
+        <TravelImage src={photo.img} alt={photo.title} loading="lazy" />
       </div>
 
       <div className="photo-card__desc">
@@ -29,3 +21,10 @@ export default function PhotoCard({ photo, children }) {
     </div>
   )
 }
+
+const TravelImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+`

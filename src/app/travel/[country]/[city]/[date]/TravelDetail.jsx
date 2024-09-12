@@ -11,6 +11,8 @@ import {
 } from '@mui/material'
 import Tag from '@components/Tag'
 import data from './data'
+import styled from '@emotion/styled'
+import fadeInUp from '@animations/fadeInUp'
 
 export default function TravelDetail({ params: { country, city, date } }) {
   const [travelTitle, setTravelTitle] = useState('')
@@ -23,17 +25,30 @@ export default function TravelDetail({ params: { country, city, date } }) {
   }, [country, city, date, travelTitle])
 
   return (
-    <div className="travel-detail-container">
+    <TravelDetailContainer>
       <div className="sub-title">{travelTitle}</div>
-      {photoList.map((item) => {
+      {photoList.map((item, index) => {
         return (
-          <PhotoCard key={item.img} photo={item}>
-            {item.tags.map((tag, idx) => {
-              return <Tag key={idx} tag={tag} />
-            })}
-          </PhotoCard>
+          <PhotoCardWrapper index={index}>
+            <PhotoCard key={item.img} photo={item}>
+              {item.tags.map((tag, idx) => {
+                return <Tag key={idx} tag={tag} />
+              })}
+            </PhotoCard>
+          </PhotoCardWrapper>
         )
       })}
-    </div>
+    </TravelDetailContainer>
   )
 }
+
+const TravelDetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
+const PhotoCardWrapper = styled.div`
+  opacity: 0;
+  animation: ${fadeInUp} 1.2s ease-out forwards;
+  animation-delay: ${({ index }) => `${index * 0.2}s`};
+`

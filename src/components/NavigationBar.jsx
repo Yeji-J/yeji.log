@@ -20,7 +20,7 @@ import { Menu as MenuIcon } from '@mui/icons-material'
 
 import { useRouter } from 'next/navigation'
 
-const drawerWidth = 180
+const drawerWidth = 130
 const navItems = [
   { title: 'DAILY', url: '/daily' },
   { title: 'TRAVEL', url: '/travel' },
@@ -44,7 +44,7 @@ export default function NavigationBar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography
         variant="h6"
-        sx={{ my: 2 }}
+        sx={{ my: 2, color: 'gray' }}
         onClick={() => handleClickNav('/')}
       >
         yeji.log
@@ -86,7 +86,11 @@ export default function NavigationBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', sm: 'block' },
+              color: 'gray',
+            }}
             onClick={() => handleClickNav('/')}
           >
             yeji.log

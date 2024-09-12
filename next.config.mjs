@@ -16,12 +16,14 @@ const nextConfig = {
       ...config.resolve.alias,
       '@components': path.resolve(__dirname, 'src/components'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+      '@animations': path.resolve(__dirname, 'src/animations'),
     }
     return config
   },
   output: 'export',
   assetPrefix: prefix,
   basePath: prefix,
+  images: { unoptimized: true },
 }
 
 export default nextConfig

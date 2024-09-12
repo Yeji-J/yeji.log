@@ -1,8 +1,8 @@
-import { Box, ImageListItem, ImageListItemBar } from '@mui/material'
-import { useRouter } from 'next/router'
+import { ImageListItem, ImageListItemBar } from '@mui/material'
 import Link from 'next/link'
+import styled from '@emotion/styled'
 
-export default function PhotoCard({ photo }) {
+export default function TravelCard({ photo }) {
   const cardTitle = `${photo.city}, ${photo.country}`
 
   const reg = (val) => {
@@ -16,18 +16,9 @@ export default function PhotoCard({ photo }) {
       )}/${photo.date.replaceAll('-', '')}`}
     >
       <ImageListItem>
-        <div className="travel-card">
-          <img
-            src={photo.img}
-            alt={photo.title}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-            loading="lazy"
-          />
-        </div>
+        <TravelImageWrapper>
+          <TravelImage src={photo.img} alt={photo.title} loading="lazy" />
+        </TravelImageWrapper>
         <ImageListItemBar
           title={cardTitle}
           subtitle={photo.date.replaceAll('-', '.')}
@@ -36,3 +27,25 @@ export default function PhotoCard({ photo }) {
     </Link>
   )
 }
+
+const TravelImageWrapper = styled.div`
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+  &:hover {
+    img {
+      transform: scale(1.07);
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: grayscale(0);
+    }
+  }
+`
+const TravelImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  filter: grayscale(100%);
+  transition: transform 0.5s ease, filter 0.5s ease;
+`
