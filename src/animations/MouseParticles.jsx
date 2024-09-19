@@ -13,10 +13,13 @@ export default function MouseParticles() {
       y: undefined,
     }
     let rgb = [
-      'rgb(247, 200, 224)',
-      'rgb(223, 255, 216)',
-      'rgb(180, 228, 255)',
-      'rgb(149, 189, 255)',
+      '#F09EA7',
+      '#F6CA94',
+      '#FAFABE',
+      '#C1EBC0',
+      '#C7CAFF',
+      '#CDABEB',
+      '#F6C2F3',
     ]
 
     function init() {
@@ -75,15 +78,15 @@ export default function MouseParticles() {
     }
 
     function easeOutQuart(x) {
-      return 1 - Math.pow(1 - x, 4)
+      return 1 - Math.pow(1 - x, 5)
     }
 
     class Ball {
       constructor() {
         this.start = {
-          x: mouse.x + getRandomInt(-10, 10),
-          y: mouse.y + getRandomInt(-10, 10),
-          size: getRandomInt(5, 10),
+          x: mouse.x + getRandomInt(-5, 5),
+          y: mouse.y + getRandomInt(-5, 5),
+          size: getRandomInt(3, 8),
         }
         this.end = {
           x: this.start.x + getRandomInt(-80, 80),
