@@ -269,7 +269,7 @@ const photoData = {
           country: `Taiwan`,
           city: `Taipei`,
           title: `roommate reunion`,
-          desc: `언니가 사준 훠궈 \n 중국어 한국어 영어를 섞어가며 \n 따뜻하고 재밌었던 대화`,
+          desc: `언니가 사준 훠궈 \n 따뜻하고 재밌었던 대화`,
           tags: [`food`],
         },
         {

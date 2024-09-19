@@ -11,6 +11,14 @@ body {
   justify-content: center;
 }
 
+canvas#canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .main-content {
   max-width: 960px;
   display: flex;
