@@ -60,4 +60,5 @@ const Footer = styled.div`
   text-align: center;
   width: 100%;
   padding: 2rem 0 2rem 0;
+  font-size: 0.9rem;
 `
