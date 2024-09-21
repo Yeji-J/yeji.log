@@ -6,7 +6,7 @@ import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBullete
 import styled from '@emotion/styled'
 import '@styles/travelDetail.css'
 
-export default function DailyLayout({ children }) {
+export default function Layout({ children }) {
   const params = useParams()
   const date = params.date ? params.date : ''
 

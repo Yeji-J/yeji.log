@@ -17,6 +17,7 @@ const nextConfig = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@animations': path.resolve(__dirname, 'src/animations'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
     }
     return config
   },

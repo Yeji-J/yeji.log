@@ -3,7 +3,7 @@ import SellRoundedIcon from '@mui/icons-material/SellRounded'
 import StarIcon from '@mui/icons-material/Star'
 
 export default function Tag({ tag }) {
-  const isFav = tag === 'FAVS'
+  const isFav = tag === 'FAVS' || tag === 'favs'
 
   return (
     <Paper

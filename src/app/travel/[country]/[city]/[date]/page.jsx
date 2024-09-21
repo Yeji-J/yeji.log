@@ -1,38 +1,38 @@
-import TravelDetail from './TravelDetail'
+'use client'
+import { useEffect, useState } from 'react'
+import PhotoCard from '@components/PhotoCard'
+import Tag from '@components/Tag'
+import data from './data'
+import styled from '@emotion/styled'
+import Fade from '@animations/Fade'
+import Slogan from '@components/Slogan'
 
-export async function generateStaticParams() {
-  const travelPaths = [
-    { country: 'canada', city: 'vancouver', date: '20190621' },
-    { country: 'japan', city: 'fukuoka', date: '20180814' },
-    { country: 'japan', city: 'tokyo', date: '20170617' },
-    { country: 'japan', city: 'osaka', date: '20181201' },
-    { country: 'taiwan', city: 'taipei', date: '20191213' },
-    { country: 'taiwan', city: 'taipei', date: '20221129' },
-    { country: 'taiwan', city: 'kaohsiung', date: '20230612' },
-    { country: 'taiwan', city: 'taichung', date: '20240216' },
-    { country: 'vietnam', city: 'hochiminh', date: '20220605' },
-    { country: 'vietnam', city: 'nhatrang', date: '20230709' },
-    { country: 'thailand', city: 'bangkok', date: '20240614' },
-    { country: 'usa', city: 'lasvegas', date: '20190422' },
-    { country: 'usa', city: 'losangeles', date: '20190224' },
-    { country: 'usa', city: 'losangeles', date: '20190609' },
-    { country: 'usa', city: 'newyork', date: '20190626' },
-    { country: 'usa', city: 'sandiego', date: '20190110' },
-    { country: 'usa', city: 'sanfrancisco', date: '20190419' },
-    { country: 'usa', city: 'sanfrancisco', date: '20190613' },
-    { country: 'usa', city: 'seattle', date: '20190616' },
-    { country: 'singapore', city: 'singapore', date: '20170717' },
-  ]
+export default function Page({ params: { country, city, date } }) {
+  const [travelTitle, setTravelTitle] = useState('')
+  const [photoList, setPhotoList] = useState([])
 
-  return travelPaths.map((path) => ({
-    country: path.country,
-    city: path.city,
-    date: path.date,
-  }))
+  useEffect(() => {
+    const { titleData, photoData } = data
+    setTravelTitle(titleData[country][city][date].title)
+    setPhotoList(photoData[country][city][date])
+  }, [country, city, date, travelTitle])
+
+  return (
+    <PageWrapper>
+      <Slogan text={travelTitle} />
+      {photoList.map((item, index) => {
+        return (
+          <Fade index={index} key={item.img}>
+            <PhotoCard key={item.img} photo={item} />
+          </Fade>
+        )
+      })}
+    </PageWrapper>
+  )
 }
 
-export default function TravelPage({ params }) {
-  const { country, city, date } = params
-
-  return <TravelDetail params={{ country, city, date }} />
-}
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`

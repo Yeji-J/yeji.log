@@ -1,35 +1,53 @@
 'use client'
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import TravelCard from '@components/TravelCard'
-import data from './data'
-import '@styles/travelDetail.css'
-import fadeInUp from '@animations/fadeInUp'
 import styled from '@emotion/styled'
+import { useRouter } from 'next/navigation'
+import data from './data'
+import Fade from '@animations/Fade'
+import urlFormatter from 'utils/urlFormatter'
 
-export default function Travel() {
-  const [travelList, setTravelList] = useState([])
+export default function Page() {
+  const router = useRouter()
+  const [travelList, _] = useState(() => {
+    return data.sort((a, b) => new Date(b.date) - new Date(a.date))
+  })
 
-  useEffect(() => {
-    const sortedData = data.sort((a, b) => {
-      return new Date(b.date) - new Date(a.date)
-    })
-    setTravelList(sortedData)
-  }, [])
+  const handleClick = (travel) => {
+    const { country, city, date } = travel
+    const url = `/travel/${urlFormatter(country, city, date)}`
+    router.push(url)
+  }
 
   return (
-    <div className="travel-list">
+    <PageWrapper>
       {travelList.map((travel, index) => (
-        <StyledTravelCard key={travel.img} index={index}>
-          <TravelCard photo={travel} />
-        </StyledTravelCard>
+        <Fade key={travel.img} index={index}>
+          <TravelCard travel={travel} onClick={() => handleClick(travel)} />
+        </Fade>
       ))}
-    </div>
+    </PageWrapper>
   )
 }
 
-const StyledTravelCard = styled.div`
-  opacity: 0;
-  animation: ${fadeInUp} 1.2s ease-out forwards;
-  animation-delay: ${({ index }) => `${index * 0.2}s`};
+const PageWrapper = styled.div`
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Mobile Landscape */
+  @media (min-width: 480px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Mobile Portrait */
+  @media (max-width: 479px) {
+    grid-template-columns: 1fr;
+  }
 `

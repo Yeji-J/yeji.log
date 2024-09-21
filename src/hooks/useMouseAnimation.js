@@ -1,9 +1,9 @@
 'use client'
 import { useEffect } from 'react'
 
-export default function MouseParticles() {
+export default function useMouseAnimation(canvasRef) {
   useEffect(() => {
-    const canvas = document.querySelector('#canvas')
+    const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
 
     let w, h

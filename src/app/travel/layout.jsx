@@ -3,48 +3,36 @@ import React from 'react'
 import { useParams } from 'next/navigation'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlined'
-import '@styles/travelDetail.css'
+import Title from '@components/Title'
 import styled from '@emotion/styled'
 
-export default function TravelLayout({ children }) {
-  const params = useParams()
-  const date = params.date
-  const country = params.country?.toUpperCase()
-  const city = params.city?.toUpperCase()
-
-  const childrenWithProps = React.Children.map(children, (child) =>
-    React.cloneElement(child, { country, city, date: params.date })
-  )
+export default function Layout({ children }) {
+  const { date, country, city } = useParams()
 
   return (
-    <div>
-      <div className="title-container">
-        <Title className="main">
-          <AirplaneTicketOutlinedIcon />
-          <div>TRAVEL LOG</div>
-        </Title>
-        {country && (
-          <Title>
-            <PlayArrowIcon /> <div>{country}</div>
-          </Title>
-        )}
-        {city && (
-          <Title>
-            <PlayArrowIcon /> <div>{decodeURI(city)}</div>
-          </Title>
-        )}
-        {date && (
-          <Title>
-            <PlayArrowIcon /> <div>{date}</div>
-          </Title>
-        )}
-      </div>
-      {childrenWithProps}
-    </div>
+    <React.Fragment>
+      <TitleWrapper>
+        <Title icon={<AirplaneTicketOutlinedIcon />} text="travel log" />
+        {country && <Title icon={<PlayArrowIcon />} text={country} />}
+        {city && <Title icon={<PlayArrowIcon />} text={decodeURI(city)} />}
+        {date && <Title icon={<PlayArrowIcon />} text={date} />}
+      </TitleWrapper>
+      {children}
+    </React.Fragment>
   )
 }
-const Title = styled.div`
+
+const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  /* mobile : page title width 100% */
+  @media (max-width: 479px) {
+    flex-wrap: wrap;
+
+    & > *:first-child {
+      width: 100%;
+    }
+  }
 `

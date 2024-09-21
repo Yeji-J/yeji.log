@@ -1,40 +1,28 @@
-import { ImageListItem, ImageListItemBar } from '@mui/material'
-import Link from 'next/link'
 import styled from '@emotion/styled'
 
-export default function TravelCard({ photo }) {
-  const cardTitle = `${photo.city}, ${photo.country}`
-
-  const reg = (val) => {
-    return val.replace(/\s+/g, '')?.toLowerCase()
-  }
+export default function TravelCard({ travel, onClick }) {
+  const title = `${travel?.city}, ${travel?.country}`
 
   return (
-    <Link
-      href={`/travel/${reg(photo.country)}/${reg(
-        photo.city
-      )}/${photo.date.replaceAll('-', '')}`}
-    >
-      <ImageListItem>
-        <TravelImageWrapper>
-          <TravelImage src={photo.img} alt={photo.title} loading="lazy" />
-        </TravelImageWrapper>
-        <ImageListItemBar
-          title={cardTitle}
-          subtitle={photo.date.replaceAll('-', '.')}
-        />
-      </ImageListItem>
-    </Link>
+    <CardWrapper onClick={onClick}>
+      <ImageWrapper>
+        <Image src={travel?.img} alt={travel?.title} loading="lazy" />
+      </ImageWrapper>
+      <TitleWrapper>
+        <span>{title}</span>
+        <span>{travel?.date.replaceAll('-', '.')}</span>
+      </TitleWrapper>
+    </CardWrapper>
   )
 }
 
-const TravelImageWrapper = styled.div`
-  width: 100%;
-  height: 300px;
+const CardWrapper = styled.div`
+  position: relative;
   border-radius: 3px;
   overflow: hidden;
 
   &:hover {
+    font-weight: bold;
     img {
       transform: scale(1.08);
       transition: transform 0.5s ease, filter 0.5s ease;
@@ -42,7 +30,29 @@ const TravelImageWrapper = styled.div`
     }
   }
 `
-const TravelImage = styled.img`
+
+const TitleWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.491);
+  text-decoration: none;
+  color: white;
+
+  & > *:nth-child(2) {
+    font-size: 0.8rem;
+  }
+`
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 300px;
+`
+const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;

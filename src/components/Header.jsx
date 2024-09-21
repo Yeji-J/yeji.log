@@ -26,7 +26,7 @@ const navItems = [
   { title: 'TRAVEL', url: '/travel' },
 ]
 
-export default function NavigationBar(props) {
+export default function Header(props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -133,7 +133,7 @@ export default function NavigationBar(props) {
   )
 }
 
-NavigationBar.propTypes = {
+Header.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
