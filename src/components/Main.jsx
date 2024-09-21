@@ -4,19 +4,19 @@ import useMouseAnimation from '@hooks/useMouseAnimation'
 import { Toolbar } from '@mui/material'
 import { useRef } from 'react'
 
-export default function Body({ children }) {
+export default function Main({ children }) {
   const canvasRef = useRef(null)
   useMouseAnimation(canvasRef)
   return (
-    <BodyWrapper>
+    <MainWrapper>
       <canvas id="canvas" ref={canvasRef}></canvas>
       <Toolbar />
       {children}
-    </BodyWrapper>
+    </MainWrapper>
   )
 }
 
-const BodyWrapper = styled.div`
+const MainWrapper = styled.div`
   max-width: 960px;
   height: 100%;
   display: flex;

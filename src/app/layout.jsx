@@ -1,6 +1,6 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import Header from '@components/Header'
-import Body from '@components/Body'
+import Main from '@components/Main'
 import Footer from '@components/Footer'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <Header />
-            <Body>{children}</Body>
+            <Main>{children}</Main>
             <Footer>© 2024 Yeji Jung. All rights reserved.</Footer>
           </ThemeProvider>
         </AppRouterCacheProvider>
