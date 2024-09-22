@@ -10,7 +10,7 @@ export default function Symbol() {
 
 const SymbolWrapper = styled.div`
   width: 100%;
-  padding: 4rem 0 4rem 0;
+  padding: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;

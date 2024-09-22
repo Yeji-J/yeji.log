@@ -22,7 +22,7 @@ const CardWrapper = styled.div`
   overflow: hidden;
 
   &:hover {
-    font-weight: bold;
+    -webkit-text-stroke: 0.8px white;
     img {
       transform: scale(1.08);
       transition: transform 0.5s ease, filter 0.5s ease;

@@ -1,142 +1,91 @@
 'use client'
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import {
-  AppBar,
-  Box,
-  CssBaseline,
-  Divider,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Toolbar,
-  Typography,
-  Button,
-} from '@mui/material'
-import { Menu as MenuIcon } from '@mui/icons-material'
+import { useState } from 'react'
+import styled from '@emotion/styled'
+import Link from 'next/link'
+import Drawer from '@components/Drawer'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 
-import { useRouter } from 'next/navigation'
-
-const drawerWidth = 130
-const navItems = [
-  { title: 'DAILY', url: '/daily' },
-  { title: 'TRAVEL', url: '/travel' },
-]
-
-export default function Header(props) {
-  const { window } = props
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const router = useRouter()
-
-  const handleClickNav = (url) => {
-    router.push(url)
-  }
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState)
-  }
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography
-        variant="h6"
-        sx={{ my: 2, color: 'gray' }}
-        onClick={() => handleClickNav('/')}
-      >
-        yeji.log
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem
-            key={item.title}
-            disablePadding
-            onClick={() => handleClickNav(item.url)}
-          >
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: 'black' }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: 'none', sm: 'block' },
-              color: 'gray',
-            }}
-            onClick={() => handleClickNav('/')}
-          >
-            yeji.log
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item.title}
-                sx={{ color: '#fff' }}
-                onClick={() => handleClickNav(item.url)}
-              >
-                {item.title}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth,
-              backgroundColor: 'black',
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
+    <HeaderWrapper>
+      <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <DrawerLogo href="/">yeji.log</DrawerLogo>
+        <Link href="/daily" onClick={() => setIsOpen(false)}>
+          daily
+        </Link>
+        <Link href="/travel" onClick={() => setIsOpen(false)}>
+          Travel
+        </Link>
+      </Drawer>
+      <NavIcon onClick={() => setIsOpen(true)}>
+        <MenuRoundedIcon />
+      </NavIcon>
+      <Logo href="/">yeji.log</Logo>
+      <LinkWrapper>
+        <Link href="/daily">daily</Link>
+        <Link href="/travel">travel</Link>
+      </LinkWrapper>
+    </HeaderWrapper>
   )
 }
 
-Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
+const HeaderWrapper = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  z-index: 999;
+  backdrop-filter: blur(1rem);
+`
+
+const NavIcon = styled.div`
+  display: none;
+
+  /* mobile */
+  @media (max-width: 479px) {
+    display: block;
+  }
+`
+const DrawerLogo = styled.a`
+  color: gray;
+  font-size: 1.2rem;
+  font-weight: 500;
+`
+
+const Logo = styled.a`
+  color: gray;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  /* mobile */
+  @media (max-width: 479px) {
+    display: none;
+  }
+`
+
+const LinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+
+  & > a {
+    &:hover {
+      -webkit-text-stroke: 1px white;
+    }
+  }
+
+  /* mobile */
+  @media (max-width: 479px) {
+    display: none;
+  }
+  
 }
+`

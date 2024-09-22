@@ -21,3 +21,8 @@ canvas#canvas {
   z-index: 999;
   pointer-events: none;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

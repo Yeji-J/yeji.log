@@ -1,7 +1,6 @@
 'use client'
 import styled from '@emotion/styled'
 import useMouseAnimation from '@hooks/useMouseAnimation'
-import { Toolbar } from '@mui/material'
 import { useRef } from 'react'
 
 export default function Main({ children }) {
@@ -10,7 +9,6 @@ export default function Main({ children }) {
   return (
     <MainWrapper>
       <canvas id="canvas" ref={canvasRef}></canvas>
-      <Toolbar />
       {children}
     </MainWrapper>
   )
@@ -21,6 +19,9 @@ const MainWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  // 수정 필요 (Header 높이)
+  margin-top: 3.5rem;
 
   @media (min-width: 1024px) {
     width: 960px;
